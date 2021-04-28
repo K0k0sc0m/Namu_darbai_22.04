@@ -17,7 +17,7 @@
                     }
 
 
-              header {
+              .header {
                 background-color: rgb(99, 10, 72);
                 padding: 30px;
                 font-size: 35px;
@@ -25,48 +25,61 @@
                        } 
 
 
-              section {
-                display: -webkit-flex;
-                display: flex;
-                 }
-
-
-              nav {
-                -webkit-flex: 1;
-                -ms-flex: 1;
-                flex: 1;
-                background: rgb(15, 100, 19);
-                padding: 20px;
-                   }
-
-
-              nav ul {
-                list-style-type: none;
-                padding: 0;
-                   }
-
-
-              article {
-                -webkit-flex: 3;
-                -ms-flex: 3;
-                flex: 3;
-                background-color: wheat;
-                padding: 10px;
-                   }
-
-
-              footer {
-                background-color: rgb(122, 161, 31);
-                padding: 10px;
-                color: rgb(129, 27, 27);
+                       .flex-container {
+                          display: flex;
+                          flex-wrap: wrap;
+                          flex-direction: row;
+                            }
+                      .flex-item-1 {
+                          width: 100%;
                       }
+                      .flex-item-2, .flex-item-3 {
+                          width: 50%;
+                           }
+                      .flex-item-2 {
+                          background-color: thistle;
+                      }
+                      .flex-item-3 {
+                          background-color: rgb(76, 0, 255);
+                      }
+                      .flex-item-4 {
+                          width: 70%;
+                          background-color: seagreen;
+                      }
+                      .flex-item-5 {
+                          width: 30%;
+                          background-color: sienna;
+                      }
+                      .flex-item-6, .flex-item-7, .flex-item-8 {                      
+                          width: 33.33%;
+                      }
+                      .flex-item-6 {                      
+                          background-color: slateblue;
+                      }
+                      .flex-item-7 {                      
+                          background-color: tan;
+                      }
+                      .flex-item-8 {                      
+                          background-color: rgb(17, 17, 8);
+                      }                  
 
-              @media (max-width: 720px) {
-              section {
-              -webkit-flex-direction: column;
-              flex-direction: column;
-                     }
-                }
+                       [class*="flex-item"] {
+                             display: flex;
+                             flex-direction: column;
+                             justify-content: center;
+                             align-items: center;
+                             
+                       }
+
+
+                       @media all and (max-width: 720px) {
+                           .flex-container {
+                               flex-flow: column wrap;
+                             }
+                               [class*="flex-item"] {
+                                width: 100%;
+                                 }
+                              }
 
              h1 {
                 font-size: 70px;
@@ -78,8 +91,8 @@
                   color: rgb(19, 2, 2);
                  }
 
-             img { width: 200px; 
-                   height: 200px;
+             img { width: 100px; 
+                   height: 100px;
                     }
 
              .list {list-style: none;
@@ -94,11 +107,13 @@
     </head>
 
     <body>
-        <header>
-        <h1>Minimali struktura</h1>
-          </header>
-           <section>
-               <nav>
+        <div class='container'>
+           <div class='flex-container'>
+              <div class='flex-item-1  header'>
+              <h1>Minimali struktura</h1>
+             </div>
+           
+               <div class='flex-item-2'>
                 <ol class='list'>
                     <li>druska</li>
                     <li>cukrus</li>
@@ -113,8 +128,8 @@
                     <li>
                       <a href='https://google.lt' target='_blank'> Einame i Google Naujas Tabas</a></li>
                    </ul> 
-               </nav>
-               <article>
+                  </div>
+               <div class='flex-item-3'>
                 <h1>This is a Heading</h1>
                 <p>Vivamus magna justo, lacinia eget consectetur sed, 
                     convallis at tellus. Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus. 
@@ -129,33 +144,41 @@
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
                     Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; 
                     Donec velit neque, auctor sit amet aliquam vel, ullamcorper sit amet ligula. Sed porttitor lectus nibh. Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Vivamus suscipit tortor eget felis porttitor volutpat.</p>
+                  </div>
+                  <div class='flex-item-4'>
                     <img src='https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Flogodownload.org%2Fwp-content%2Fuploads%2F2014%2F09%2Fgoogle-logo-1.png&f=1&nofb=1'>
                     <img src='https://taksai.lt/wp-content/uploads/2019/11/FV2A8180-1140x822.jpg'>
                     <img src='https://g3.dcdn.lt/images/pix/bezdziones-asmenuke-75739745.jpg'>
+                  </div>
+                  <div class='flex-item-5'>
                     <p>Stulpelis</p><br>
                     <p>Stulpelis</p><br>
                     <p>Stulpelis</p><br>
                     <p>Stulpelis</p><br>
                     <p>Stulpelis</p>     
                     <p>Stulpelis</p> 
+                  </div>
+                  <div class='flex-item-6'>
                     <h2>This is a Heading</h2>
                     <h2>This is a Heading</h2>
                     <h3>This is a Heading</h3>
                     <h4>This is a Heading</h4>
                     <h5>This is a Heading</h5>
                     <h6>This is a Heading</h6>
-           </section> 
-
-           <footer>
+                  </div>
+                  <div class='flex-item-7'>
                    <p>Tekstas su zyma p</p>
                    <span>Tekstas su zyma span</span>
+                  </div>
+                  <div class='flex-item-8'>
                    <h1>Antra paskaita</h1>
                    <a href='https://google.lt' target='_blank'>Einame i Google Naujas Tab'as</a><br>
                    <a href='https://google.lt'>Einame i Google Be Naujo Tab'o</a><br>
                    <a href='about.html'>Einame i vidini about.html puslapi be naujo tabo</a><br>
                    <a href='about.html' target='_blank'>Einame i vidini about.html puslapi su nauju tab</a><br> 
-           </footer>         
-
+                  </div>
+         </div>    
+       </div>
     </body>
 
  </html>
